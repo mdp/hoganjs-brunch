@@ -14,7 +14,7 @@ If you want to use git version of plugin, add
 
 Create a Mustache template
 
-    # view/templates/city.mustache
+    # views/templates/city.mustache
     I live in {{name}}
 
 Require the template
