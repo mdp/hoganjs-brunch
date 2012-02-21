@@ -1,0 +1,27 @@
+{
+  "name": "hogan-brunch",
+  "version": "1.0.0",
+  "description": "Adds Mustache support to brunch via HoganJs.",
+  "author": "Mark Percival (http://mdp.im/)",
+  "homepage": "https://github.com/mdp/hogan-brunch",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mdp/hogan-brunch.git"
+  },
+  "main": "./lib/index",
+  "scripts": {
+    "postinstall": "./node_modules/coffee-script/bin/coffee -o lib/ src/",
+    "test": "./node_modules/mocha/bin/mocha --require test/common.js"
+  },
+  "engines": {
+    "node": "~0.6.10"
+  },
+  "dependencies": {
+    "coffee-script": "1.2.0",
+    "hogan": "1.0.5-dev"
+  },
+  "devDependencies": {
+    "mocha": "0.12.1",
+    "expect.js": "0.1.2"
+  }
+}
