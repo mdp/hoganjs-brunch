@@ -23,4 +23,4 @@ Require the template
 
 Render the template with some data:
 
-    $(@el).html template({'name': 'San Francisco'})
+    @$el.html template({'name': 'San Francisco'})

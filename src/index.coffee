@@ -2,7 +2,8 @@ hogan = require 'hogan.js'
 sysPath = require 'path'
 
 module.exports = class HoganCompiler
-  compilerType: 'template'
+  brunchPlugin: yes
+  type: 'template'
   extension: 'mustache'
 
   constructor: (@config) ->
@@ -10,7 +11,7 @@ module.exports = class HoganCompiler
 
   # Returns a precompiled template with a 'render' function
   # Usage Example:
-  # $(@el).html(template({name: "mdp", city: "SF"}))
+  # @$el.html(template({name: "mdp", city: "SF"}))
   compile: (data, path, callback) ->
     try
       content = hogan.compile data, asString: yes
@@ -24,6 +25,7 @@ module.exports = class HoganCompiler
     finally
       callback error, result
 
-  # Add '../node_modules/hogan.js/web/builds/1.0.5/template-1.0.5.js' to vendor files.
+  # Add '../node_modules/hogan.js/web/builds/1.0.5/template-1.0.5.js'
+  # to vendor files.
   include: ->
     [(sysPath.join '..', 'node_modules', 'hogan.js', 'web', 'build', '1.0.5', 'template-1.0.5.js')]
