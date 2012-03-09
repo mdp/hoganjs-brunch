@@ -1,4 +1,4 @@
-## jade-brunch
+## hoganjs-brunch
 Adds [Hogan.Js](http://twitter.github.com/hogan.js/) support to
 [brunch](http://brunch.io).
 
