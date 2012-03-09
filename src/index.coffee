@@ -15,11 +15,7 @@ module.exports = class HoganCompiler
   compile: (data, path, callback) ->
     try
       content = hogan.compile data, asString: yes
-      result = "module.exports = function(data) {
-        var t = new Hogan.Template();
-        t.r = #{content};
-        return t.render(data);
-      }"
+      result = "module.exports = new Hogan.Template(#{content});"
     catch err
       error = err
     finally
@@ -28,4 +24,4 @@ module.exports = class HoganCompiler
   # Add '../node_modules/hogan.js/web/builds/1.0.5/template-1.0.5.js'
   # to vendor files.
   include: ->
-    [(sysPath.join '..', 'node_modules', 'hogan.js', 'web', 'build', '1.0.5', 'template-1.0.5.js')]
+    [(sysPath.join __dirname, '..', 'node_modules', 'hogan.js', 'web', 'builds', '1.0.5', 'template-1.0.5.js')]
