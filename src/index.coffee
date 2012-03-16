@@ -21,7 +21,7 @@ module.exports = class HoganCompiler
     finally
       callback error, result
 
-  # Add '../node_modules/hogan.js/web/builds/1.0.5/template-1.0.5.js'
+  # Add '../node_modules/hogan.js/web/builds/2.0.0/template-2.0.0.js'
   # to vendor files.
   include: ->
-    [(sysPath.join __dirname, '..', 'node_modules', 'hogan.js', 'web', 'builds', '1.0.5', 'template-1.0.5.js')]
+    [(sysPath.join __dirname, '..', 'node_modules', 'hogan.js', 'web', 'builds', '2.0.0', 'template-2.0.0.js')]
