@@ -15,7 +15,11 @@ module.exports = class HoganCompiler
   compile: (data, path, callback) ->
     try
       content = hogan.compile data, asString: yes
-      result = "module.exports = new Hogan.Template(#{content});"
+      if @config.hoganjs?
+        wrapper = @config.hoganjs.wrapper
+        if wrapper? and typeof wrapper = "function"
+          result = wrapper path, content
+      result = "module.exports = new Hogan.Template(#{content});" unless result?
     catch err
       error = err
     finally
