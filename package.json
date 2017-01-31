@@ -8,20 +8,19 @@
     "type": "git",
     "url": "git@github.com:mdp/hoganjs-brunch.git"
   },
-  "main": "./lib/index",
+  "main": "index.js",
   "scripts": {
-    "postinstall": "node setup.js postinstall",
-    "test": "node setup.js test"
+    "test": "mocha"
   },
   "engines": {
-    "node": "~0.6.10"
+    "node": ">=4.0"
   },
   "dependencies": {
-    "coffee-script": "1.2.0",
     "hogan.js": "2.0.0"
   },
   "devDependencies": {
-    "mocha": "0.12.1",
-    "expect.js": "0.1.2"
+    "eval": "^0.1.2",
+    "expect.js": "0.1.2",
+    "mocha": "^3.2.0"
   }
 }
