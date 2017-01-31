@@ -1,3 +1,5 @@
+'use strict';
+
 const hogan = require('hogan.js');
 const sysPath = require('path');
 
@@ -12,14 +14,15 @@ class HoganCompiler {
         const content = hogan.compile(file.data, {asString: true});
 
         if (this.config.hoganjs) {
-          if (typeof this.config.hoganjs.wrapper === "function") {
-            return resolve(wrapper(path, content));
+          const wrapper = this.config.hoganjs.wrapper;
+          if (typeof wrapper === 'function') {
+            return resolve(wrapper(file.path, content));
           }
         }
 
         resolve({
           data: `module.exports = new Hogan.Template(${content})`,
-        })
+        });
       } catch (e) {
         reject(e);
       }

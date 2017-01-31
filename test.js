@@ -1,3 +1,6 @@
+/* eslint no-undef: 0 */
+'use strict';
+
 const _eval = require('eval');
 const Hogan = require('hogan.js');
 const expect = require('expect.js');
@@ -18,12 +21,12 @@ describe('Plugin', () => {
     const content = 'Follow me @{{name}}';
     const expected = 'Follow me @mdp';
 
-    return plugin.compile({ data: content })
+    return plugin.compile({data: content})
       .then(file => {
         const template = _eval(file.data, 'template.mustache', {Hogan})
           .render({name: 'mdp'});
 
         expect(template).to.equal(expected);
-      })
+      });
   });
 });
