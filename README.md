@@ -1,26 +1,35 @@
-## hoganjs-brunch
-Adds [Hogan.Js](http://twitter.github.com/hogan.js/) support to
-[brunch](http://brunch.io).
+# hoganjs-brunch
+
+Adds [Hogan.js](http://twitter.github.com/hogan.js/) support to
+[Brunch](http://brunch.io).
 
 ## Installation
-Add `"hoganjs-brunch": "x.y.z"` to `package.json` of your brunch app.
 
-Pick a plugin version that corresponds to your minor (y) brunch version.
+```
+npm install --save-dev hoganjs-brunch
+```
+
+Or add `"hoganjs-brunch": "x.y.z"` to `package.json` of your brunch app. Pick a plugin version that corresponds to your minor (y) Brunch version.
 
 If you want to use git version of plugin, add
 `"hoganjs-brunch": "git@github.com:mdp/hoganjs-brunch.git"`.
 
 ## Usage:
 
-Create a Mustache template
+Create a Mustache template:
 
-    # views/templates/city.mustache
-    I live in {{name}}
+```
+I live in {{name}}
+```
 
-Require the template
+Require the template:
 
-    template = require 'views/templates/city'
+```js
+const template = require('views/templates/city');
+```
 
 Render the template with some data:
 
-    @$el.html template.render({'name': 'San Francisco'})
+```js
+document.body.innerHTML = template.render({'name': 'San Francisco'});
+```
