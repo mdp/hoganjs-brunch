@@ -1,6 +1,6 @@
 {
   "name": "hoganjs-brunch",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Adds Mustache support to Brunch via Hogan.js.",
   "author": "Mark Percival (http://mdp.im/)",
   "homepage": "https://github.com/mdp/hoganjs-brunch",
