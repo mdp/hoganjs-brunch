@@ -30,7 +30,7 @@ class HoganCompiler {
   }
 
   get include() {
-    return [sysPath.join(__dirname, '..', 'node_modules', 'hogan.js', 'web', 'builds', '2.0.0', 'template-2.0.0.js')];
+    return [sysPath.join(__dirname, '..', 'hogan.js', 'web', 'builds', '2.0.0', 'template-2.0.0.js')];
   }
 }
 
